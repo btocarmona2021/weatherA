@@ -4,8 +4,7 @@ html, * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Chakra Petch', sans-serif; /* Se usa la fuente Chakra en todo el documento */
-    font-size: 1rem;
+    font-family: 'Chakra Petch', sans-serif;
     font-weight: 500;
 }
 .header{
