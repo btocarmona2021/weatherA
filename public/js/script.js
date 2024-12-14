@@ -50,7 +50,7 @@ selectProvincias.addEventListener('change', (ev) => {
 
 selectCiudades.addEventListener('change', (ev) => {
     const provincia = selectProvincias.value;
-    fetch(`/clima?ciudad=${ev.target.value} ${provincia}`)
+    fetch(`https://weather-a-z69l.vercel.app/clima?ciudad=${ev.target.value}&pais=${provincia}`)
         .then(datos => datos.json())
         .then((datos) => {
             const {current, forecast} = datos;
