@@ -50,7 +50,7 @@ selectProvincias.addEventListener('change', (ev) => {
 
 selectCiudades.addEventListener('change', (ev) => {
     const provincia = selectProvincias.value;
-    fetch(`http://localhost:5000/clima?ciudad=${ev.target.value}&pais=${provincia}`)
+    fetch(`https://localhost:5000/clima?ciudad=${ev.target.value}&pais=${provincia}`)
         .then(datos => datos.json())
         .then((datos) => {
             const {current, forecast} = datos;
