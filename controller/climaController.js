@@ -1,14 +1,15 @@
+import weather from 'weather-js';
+
 export const obtenerClima = (req, res) => {
-    const { ciudad, pais } = req.query;
+    const ciudad = req.query.ciudad;
+    const pais = req.query.pais;
 
-    if (!ciudad || !pais) {
-        return res.status(400).json({ error: 'Se requiere los parámetros "ciudad" y "pais".' });
-    }
-
-    weather.find({ search: `${ciudad},${pais}`, degreeType: 'C' }, (error, resultado) => {
+    weather.find({search: `${ciudad},${pais}`, degreeType: 'C'}, (error, resultado) => {
         if (error) {
-            console.log(error);
-            return res.status(500).json({ error: 'Hubo un problema al obtener el clima' });
+            return res.status(500).json({ error: 'Error al obtener el clima', details: error });
+        }
+        if (!resultado || resultado.length === 0) {
+            return res.status(404).json({ error: 'No se encontraron resultados para esta ciudad' });
         }
         res.status(200).json(resultado[0]);
     });
