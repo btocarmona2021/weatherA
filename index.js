@@ -4,9 +4,7 @@ import cors from 'cors';
 const app = express();
 const PORT = 5000;
 
-app.use(cors({
-    origin: 'https://weather-a-opsp.vercel.app/', // Reemplaza con la URL de tu frontend
-}));
+app.use(cors());
 app.use(express.static('public'));
 app.use(express.json());
 
