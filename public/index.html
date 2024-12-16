@@ -11,12 +11,12 @@
 </head>
 <body>
 <main class="container-fluid pt-3 header">
-    <div class="row">
-        <div class="col-6 w-50">
+    <div class="row gap-2">
+        <div class="col-sm-12 col-md-12 col-sm w-50">
             <label for="provincias" class="text-white">Ingresa tu provincia</label>
             <select name="provincias" id="provincias" class="form-control"></select>
         </div>
-        <div class="col-6 w50">
+        <div class="col-sm-12 col-md-12 w50">
             <label for="ciudades" class="text-white">Ingresa tu ciudad</label>
             <select name="ciudades" id="ciudades" class="form-control"></select>
         </div>
@@ -24,19 +24,19 @@
 </main>
 
 <section class="container-fluid header p-3">
-    <fieldset class="row d-flex justify-content-around">
+    <fieldset class="row d-flex justify-content-around gap-2">
         <legend class="text-white">Clima actual en tu ciudad</legend>
-        <div class="col-3 bg-dark-subtle p-3 text-black rounded-2 shadow-sm">
+        <div class="col-12 col-sm-6 col-md-3 col-lg-3 bg-dark-subtle p-3 text-black rounded-2 shadow-smh-75">
             <p>Ciudad: <span id="ciudad"></span></p>
             <p>Hoy es: <span id="dia"></span></p>
             <p>Fecha: <span id="fecha"></span></p>
         </div>
-        <div class="col-3 bg-dark-subtle p-3 text-black rounded-2 shadow-sm">
+        <div class="col-12 col-sm-6  col-md-3 col-lg-3 bg-dark-subtle p-3 text-black rounded-2 shadow-sm h-75">
             <p>Hora: <span id="hora"></span></p>
             <p>Temperatura: <span id="temperatura"></span></p>
             <p>Cielo: <span id="cielo"></span></p>
         </div>
-        <div class="col-3 bg-dark-subtle p-3 text-black rounded-2 shadow-sm">
+        <div class="col-12 col-sm-6 col-md-3 col-lg-3 bg-dark-subtle p-3 text-black rounded-2 shadow-sm  h-75">
             <p>Sensacion Termica: <span id="sensacion"></span></p>
             <p>Humedad: <span id="humedad"></span></p>
             <p>Viento: <span id="viento"></span></p>
@@ -48,7 +48,6 @@
     <h4 class="text-white">Pronostico extendido x 5 dias</h4>
     <div class="row d-flex justify-content-around" id="pronostico">
     </div>
-
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

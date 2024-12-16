@@ -50,7 +50,7 @@ selectProvincias.addEventListener('change', (ev) => {
 
 selectCiudades.addEventListener('change', (ev) => {
     const provincia = selectProvincias.value;
-    fetch(`https://weathera-production.up.railway.app/clima?ciudad=${ev.target.value}&provincia=${provincia}`)
+    fetch(`http://localhost:5000/clima?ciudad=${ev.target.value} ${provincia}`)
         .then(datos => datos.json())
         .then((datos) => {
             const {current, forecast} = datos;
@@ -75,7 +75,7 @@ selectCiudades.addEventListener('change', (ev) => {
             console.log(forecast)
             forecast.forEach((dia) => {
                 const plantilla = ` 
-                       <fieldset class="col-2 p-2 bg-info-subtle rounded-2">
+                       <fieldset class="col-12 col-sm-6 col-md-3 col-lg-3 m-2 p-2 bg-info-subtle rounded-2">
     <p>Fecha: <span>${dia.date}</span></p>
     <p>Dia: <span>${dia.day === 'Friday' ? 'Viernes' : dia.day === 'Saturday' ? 'Sabado'
                     : dia.day === 'Sunday' ? 'Domingo' : dia.day === 'Monday' ? 'Lunes' : dia.day === 'Tuesday' ? 'Martes'
